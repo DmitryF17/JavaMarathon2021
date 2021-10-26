@@ -17,8 +17,8 @@ public class Task1 {
             numbers[number] = (int) (Math.random() * (10 - 1)) + 1;
         }
 
-        System.out.println("Введено число ." + n + " Сгенерированн массив :");
-
+        System.out.println("Введено число " + n + " Сгенерирован массив :");
+        System.out.print("[");
         for (int num : numbers) {
             if (num > 8) {
                 x++;
@@ -29,8 +29,9 @@ public class Task1 {
             if (num % 2 == 0) {
                 z++;
             }
-            System.out.print(num + " ,");
+            System.out.print(num + " ");
         }
+        System.out.print("]");
         System.out.println();
         System.out.println("Длина массива : " + n);
         System.out.println("Количество чисел больше 8 : " + x);
