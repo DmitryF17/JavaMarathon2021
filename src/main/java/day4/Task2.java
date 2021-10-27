@@ -17,12 +17,12 @@ public class Task2 {
         int max = 0;
         int endzero = 0;
         int sumendzero = 0;
+        int min = 10000;
         Random random = new Random();
         int[] numbers = new int[100];
         for (int num = 0; num != 100; num++) {
             numbers[num] = random.nextInt(10000);
         }
-        int min = numbers[0];
         for (int num : numbers) {
             if (num <= min) {
                 min = num;

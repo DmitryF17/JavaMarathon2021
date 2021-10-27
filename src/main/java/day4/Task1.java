@@ -1,6 +1,9 @@
 package day4;
 
+import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
+
 // С клавиатуры вводится число n - размер массива.
 // Необходимо создать массив указанного размера
 // и заполнить его случайными числами от 0 до 10 (не включительно).
@@ -14,35 +17,40 @@ import java.util.Scanner;
 //е) Сумме всех элементов массива
 public class Task1 {
     public static void main(String[] args) {
-        int x = 0;
-        int y = 0;
-        int z = 0;
+        int counter8 = 0;
+        int counter1 = 0;
+        int countereven = 0;
+        int counterodd = 0;
+        int sum = 0;
         Scanner console = new Scanner(System.in);
         int n = console.nextInt();
+        Random random = new Random();
         int[] numbers = new int[n];
         for (int number = 0; number != n; number++) {
-            numbers[number] = (int) (Math.random() * (10 - 1)) + 1;
+            numbers[number] = random.nextInt(10);
         }
-
-        System.out.println("Введено число " + n + " Сгенерирован массив :");
-        System.out.print("[");
         for (int num : numbers) {
+            sum += num;
             if (num > 8) {
-                x++;
+                counter8++;
             }
             if (num == 1) {
-                y++;
+                counter1++;
             }
-            if (num % 2 == 0) {
-                z++;
+            if (num % 2 == 0 & num != 0) {
+                countereven++;
             }
-            System.out.print(num + " ");
+            if (num % 2 != 0) {
+                counterodd++;
+            }
         }
-        System.out.print("]");
-        System.out.println();
+        System.out.println("Введено число " + n + " Сгенерирован массив :");
+        System.out.println(Arrays.toString(numbers));
         System.out.println("Длина массива : " + n);
-        System.out.println("Количество чисел больше 8 : " + x);
-        System.out.println("Количество чисел равных 1 : " + y);
-        System.out.println("Количество четных чисел : " + z);
+        System.out.println("Количество чисел больше 8 : " + counter8);
+        System.out.println("Количество чисел равных 1 : " + counter1);
+        System.out.println("Количество четных чисел : " + countereven);
+        System.out.println("Количество нечетных чисел : " + counterodd);
+        System.out.println("Сумма всех элементов массива : " + sum);
     }
 }
