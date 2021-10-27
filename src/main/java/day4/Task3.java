@@ -29,6 +29,7 @@ public class Task3 {
                 indexline = index;
             }
             index++;
+
         }
         System.out.println("Индекс строки , сумма чисел в которой максимальна : " + indexline);
     }
