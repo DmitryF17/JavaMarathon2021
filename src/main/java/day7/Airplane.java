@@ -1,4 +1,4 @@
-package day6;
+package day7;
 
 public class Airplane {
     private String producer;
@@ -35,6 +35,10 @@ public class Airplane {
         this.fuel = fuel;
     }
 
+    public int getLength() {
+        return length;
+    }
+
     public int getFuel() {
         return fuel;
     }
@@ -45,8 +49,18 @@ public class Airplane {
                 + ", количество топлива в баке: " + fuel);
     }
 
-    public void fillUp(int inputFuel) {
-        fuel += inputFuel;
+    public void fillUp(int n) {
+        setFuel(n + getFuel());
+    }
+
+    public static void compareAirplanes(Airplane airplane1, Airplane airplane2) {
+        if (airplane1.getLength() > airplane2.getLength()) {
+            System.out.println("Первый самолет длиннее");
+        } else if (airplane1.getLength() < airplane2.getLength()) {
+            System.out.println("Второй самолет длиннее");
+        } else {
+            System.out.println("Длины самолетов равны");
+        }
     }
 }
 

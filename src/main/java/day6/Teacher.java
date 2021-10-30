@@ -25,10 +25,26 @@ public class Teacher {
 
     void evaluate(Student student) {
         Random random = new Random();
-        System.out.print("Преподаватель" + getName() +
+        int randomValue = random.nextInt(4) + 2;
+        String evalution = "";
+        switch (randomValue) {
+            case 2:
+                evalution = "неудовлетворительно";
+                    break;
+            case 3:
+                evalution = "удовлетворительно";
+                break;
+            case 4:
+                evalution = "хорошо";
+                break;
+            case 5:
+                evalution = "отлично";
+                break;
+        }
+        System.out.print("Преподаватель" + this.name +
         "оценил студента с именем" + student.getName() +
-        "по предмету" + getSubject() +
-        "на оценку " + (random.nextInt(4) + 2)
+        "по предмету" + this.subject +
+        "на оценку " + evalution
         );
     }
 }

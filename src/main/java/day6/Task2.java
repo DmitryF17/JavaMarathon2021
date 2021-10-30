@@ -22,7 +22,7 @@ package day6;
 // вызвать метод fillUp(int n) два раза, передав разные значения. Вызвать метод info().
 public class Task2 {
     public static void main(String[] args) {
-        Airplane airplane = new Airplane("TU", 2015,52.5, 20);
+        Airplane airplane = new Airplane("TU", 2015,52, 20);
         airplane.setYear(2016);
         airplane.setLength(53);
         airplane.fillUp(100);
