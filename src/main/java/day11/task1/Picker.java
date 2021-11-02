@@ -11,7 +11,7 @@ public class Picker implements Worker {
         this.warehouse = warehouse;
     }
 
-    public void setSalary(int salary) {
+    private void setSalary(int salary) {
         this.salary = salary;
     }
 

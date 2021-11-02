@@ -33,10 +33,9 @@ public class Task1 {
         System.out.println("ЗП курьера " + courier1.toString());
     }
 
-    static void businessProcess(Worker worker) {
+    private static void businessProcess(Worker worker) {
         for (int step = 0; step != 10000; step++) {
             worker.doWork();
         }
-        worker.bonus();
     }
 }
