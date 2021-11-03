@@ -2,10 +2,10 @@ package day11.task2;
 
 public class Task2 {
     public static void main(String[] args) {
-        Hero warrior = new Warrior();
-        Hero palladin = new Palladin();
-        Hero shaman = new Shaman();
-        Hero magician = new Magician();
+        var warrior = new Warrior();
+        var palladin = new Palladin();
+        var shaman = new Shaman();
+        var magician = new Magician();
 
         warrior.physicalAttack(palladin);
         System.out.println(palladin.toString());

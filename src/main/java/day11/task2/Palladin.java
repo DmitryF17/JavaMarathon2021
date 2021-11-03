@@ -1,15 +1,14 @@
 package day11.task2;
 
-public class Palladin extends Hero implements PhysAttack, Healer {
-    static final int HEALTH_AMOUNT = 25;
-    static final int HEALTH_TEAMMATE = 10;
+public class Palladin extends Hero implements Healer {
+    private static final int HEALTH_AMOUNT = 25;
+    private static final int HEALTH_TEAMMATE = 10;
 
     public Palladin() {
         physDef = 0.5;
         magicDef = 0.2;
         physAtt = 15;
     }
-
 
     @Override
     public void healHimself() {

@@ -1,6 +1,6 @@
 package day11.task2;
 
-public class Shaman extends Hero implements MagicAttack, PhysAttack, Healer {
+public class Shaman extends Hero implements MagicAttack, Healer {
 
     int magicAtt = 15;
     static final int HEALTH_AMOUNT = 50;
@@ -11,15 +11,6 @@ public class Shaman extends Hero implements MagicAttack, PhysAttack, Healer {
         physDef = 0.2;
         magicDef = 0.2;
         physAtt = 10;
-    }
-
-    @Override
-    public void setHealth(int health) {
-        if (health < 0) {
-            this.health = 0;
-        } else {
-            this.health = health;
-        }
     }
 
     @Override

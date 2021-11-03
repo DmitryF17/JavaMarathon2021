@@ -13,8 +13,8 @@ package day11.task2;
 // которые ему доступны. Например, Воин не может лечить, значит в классе Воин не реализуется интерфейс Healer,
 // соответственно запись warrior.healHimself() является недопустимой.
 // Параметры для героя задаются внутри конструктора, при этом сам конструктор не должен принимать аргументов.
-public abstract class Hero implements PhysAttack, MagicAttack, Healer {
-    final int MIN_HEALTH = 0;
+public abstract class Hero implements PhysAttack {
+    static final int MIN_HEALTH = 0;
     static final int MAX_HEALTH = 100;
     int health;
     double physDef;
@@ -25,22 +25,6 @@ public abstract class Hero implements PhysAttack, MagicAttack, Healer {
         health = 100;
     }
 
-    public int getHealth() {
-        return health;
-    }
-
-    public void setHealth(int health) {
-        this.health = health;
-    }
-
-    @Override
-    public void healTeammate(Hero hero) {
-    }
-
-    @Override
-    public void healHimself() {
-    }
-
     @Override
     public void physicalAttack(Hero hero) {
         double attackscore = physAtt * (1 - hero.physDef);
@@ -49,10 +33,6 @@ public abstract class Hero implements PhysAttack, MagicAttack, Healer {
         } else {
             hero.health -= attackscore;
         }
-    }
-
-    @Override
-    public void magicalAttack(Hero hero) {
     }
 
     @Override
