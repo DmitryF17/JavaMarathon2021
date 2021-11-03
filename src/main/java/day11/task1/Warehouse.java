@@ -7,20 +7,20 @@ public class Warehouse {
     private  int countPickedOrders = 0;
     private  int countDeliveredOrders = 0;
 
-    public  void setCountPickedOrders(int countPickedOrders) {
-       this.countPickedOrders = countPickedOrders;
-    }
-
-    public  void setCountDeliveredOrders(int countDeliveredOrders) {
-        this.countDeliveredOrders = countDeliveredOrders;
-    }
-
     public  int getCountPickedOrders() {
         return countPickedOrders;
     }
 
     public  int getCountDeliveredOrders() {
         return countDeliveredOrders;
+    }
+
+    public  void incrementPickedOrders() {
+       countPickedOrders++;
+    }
+
+    public  void incrementDeliveredOrders() {
+       countDeliveredOrders++;
     }
 
     public String toString() {

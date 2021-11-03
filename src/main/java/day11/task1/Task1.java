@@ -37,5 +37,6 @@ public class Task1 {
         for (int step = 0; step != 10000; step++) {
             worker.doWork();
         }
+        worker.bonus();
     }
 }
