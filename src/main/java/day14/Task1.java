@@ -29,9 +29,9 @@ public class Task1 {
             for (String number : numbers) {
                 sum += Integer.parseInt(number);
             }
+            System.out.println(sum);
         } catch (FileNotFoundException e) {
             System.out.println("Файл не найден");
         }
-        System.out.println(sum);
     }
 }
