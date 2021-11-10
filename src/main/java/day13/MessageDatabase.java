@@ -41,11 +41,10 @@ public class MessageDatabase {
 
     public static void showDialog(User u1, User u2) {
         for (Message message : messages) {
-            if (message.getSender().equals(u1) & message.getReceiver().equals(u2) |
+            if (message.getSender().equals(u1) & message.getReceiver().equals(u2) ||
                     message.getSender().equals(u2) & message.getReceiver().equals(u1)) {
                 System.out.println(message.getSender().getUsername() + ": " + message.getText());
             }
         }
-
     }
 }
