@@ -8,6 +8,7 @@ package day14;
 // Помимо этого, если значение возраста отрицательно,
 // необходимо выбрасывать исключение и выводить в консоль сообщение “Некорректный входной файл”.
 //Пример ответа: [{name='Mike', year=24}, {name='John', year=19}, {name='Miguel', year=5}]
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -19,27 +20,27 @@ public class Task3 {
         File file = new File("people.txt");
         System.out.println(parseFileToObjList(file));
     }
+
     public static List<Human> parseFileToObjList(File file) {
         List<Human> peoples = new ArrayList<>();
-        String[] human;
         try {
             Scanner scanner = new Scanner(file);
-
             while (scanner.hasNextLine()) {
-                String people = scanner.nextLine();
-                if (people.contains("-")) {
-                    try {
-                        throw new Exception();
-                    } catch (Exception t) {
-                        System.out.println("Некорректный входной файл");
-                    }
+                String line = scanner.nextLine();
+                String[] people = line.split(" ");
+                if (Integer.parseInt(people[1]) < 0) {
+                    throw new IllegalArgumentException();
                 }
-                human = people.split(" ");
-                peoples.add(new Human(human[0], Integer.parseInt(human[1])));
+                peoples.add(new Human(people[0], Integer.parseInt(people[1])));
             }
+            return peoples;
         } catch (FileNotFoundException e) {
             System.out.println("Файл не найден");
+        } catch (IllegalArgumentException t) {
+            System.out.println("Некорректный входной файл");
         }
-        return peoples;
+        return null;
     }
 }
+
+

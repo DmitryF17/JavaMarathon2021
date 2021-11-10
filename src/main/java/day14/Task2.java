@@ -39,19 +39,19 @@ public class Task2 {
             Scanner scanner = new Scanner(file);
 
             while (scanner.hasNextLine()) {
-                String people = scanner.nextLine();
-                if (people.contains("-")) {
-                    try {
-                        throw new Exception();
-                    } catch (Exception t) {
-                        System.out.println("Некорректный входной файл");
-                    }
+                String line = scanner.nextLine();
+                String[] people = line.split(" ");
+                if (Integer.parseInt(people[1]) < 0) {
+                    throw new IllegalArgumentException();
                 }
-                peoples.add(people);
+                peoples.add(line);
             }
+            return peoples;
         } catch (FileNotFoundException e) {
             System.out.println("Файл не найден");
+        } catch (IllegalArgumentException t) {
+            System.out.println("Некорректный входной файл");
         }
-        return peoples;
+        return null;
     }
 }

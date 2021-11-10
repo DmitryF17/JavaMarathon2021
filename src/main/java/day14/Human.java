@@ -1,8 +1,8 @@
 package day14;
 //Создать класс “Человек” с полями “имя” и “возраст”.
 public class Human {
-    String name;
-    int age;
+   private String name;
+   private int age;
     public Human(String name, int age) {
         this.name = name;
         this.age = age;
