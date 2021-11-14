@@ -19,7 +19,7 @@ import java.util.Scanner;
 //Пример:
 //Числа в txt файле: 5 2 8 34 1 36 77
 //Ответ: 23.285714285714285 --> 23.286
-public class  Task1 {
+public class Task1 {
     public static void main(String[] args) {
         File file = new File("number.txt");
         printResult(file);
