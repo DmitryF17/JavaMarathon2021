@@ -59,7 +59,7 @@ public class Task2 {
                 for (int index = step * 20; index != step * 20 + 20; index++) {
                     sum += Double.parseDouble(numbers[index]);
                 }
-                writeFile2.print(sum + " ");
+                writeFile2.print(sum / 20 + " ");
             }
             writeFile2.close();
 
