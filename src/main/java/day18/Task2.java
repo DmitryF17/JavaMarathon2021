@@ -5,6 +5,7 @@ public class Task2 {
         int number = 878878;
         System.out.println(count7(number));
     }
+
     public static int count7(int number) {
         if (number == 0) {
             return 0;
@@ -14,5 +15,5 @@ public class Task2 {
         } else {
             return count7(number / 10);
         }
-   }
+    }
 }
